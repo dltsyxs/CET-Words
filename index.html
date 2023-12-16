@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CET单词</title>
+    <script src="all.js"></script>
+    <script type="module">
+        var keys = new Array();
+        for (var key in data) keys.push(key);
+        var count = 0
+        function fresh() {
+            count = count + 1;
+            var n = Math.floor(Math.random() * (keys.length + 1));
+            document.getElementById("h1").innerHTML = keys[n];
+            document.getElementById("h2").innerHTML = data[keys[n]][0] + " " + data[keys[n]][1];
+            document.querySelector("title").innerHTML = `CET单词 - ${count}`;
+        }
+        fresh()
+        const html = document.querySelector('html');
+        html.addEventListener('click', fresh);
+
+    </script>
+</head>
+
+<body>
+    <div style="margin: auto;">
+        <p id="h1" style="margin:1em 0.5em 0em 0em;text-align: center;font-size: 8em;width: 100%;"></p>
+        <p id="h2" style="text-align: center;font-size:6em;width: 100%;"></p>
+    </div>
+</body>
+
+</html>
